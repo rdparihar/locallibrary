@@ -1,5 +1,16 @@
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+x {
+    width: 50%;
+    height: 45px;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.0);
+    margin: 5px 0 5px 2px;
+    transition:  0.5s;
+    transition-property:  box-shadow;
+    transition-timing-function: 1s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+.x:hover {
+    border: #ef5350 1px;
+   box-shadow: 0 2px 20px 0 rgba(0,0,1,0.15)
+  /* box-shadow: 0 3px 15px #ef5350;*/
 }

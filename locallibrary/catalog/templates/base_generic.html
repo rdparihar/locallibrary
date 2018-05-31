@@ -6,39 +6,167 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
- 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   
       <!-- Custom CSS -->
 
    
   <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'css/lib/bootstrap/bootstrap.min.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'css/lib/calendar2/semantic.ui.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lib/calendar2/pignose.calendar.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/lib/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/lib/owl.carousel.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/helper.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
 
-<body>
+<body class="fix-header fix-sidebar">
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        
+                        <b><img src="{% static 'images/logo1.png' %}" alt="homepage" class="dark-logo" height="48" width="132" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text 
+                        <span><img src="{% static 'images/snp_lga.png' %}" alt="homepage" class="dark-logo" height="42" width="72"/></span>
+                            -->
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                       
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
 
-  <div class="container-fluid shadow-none p-3 mb-5 bg-light rounded">
+                        
+                        <!-- Comment -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Notifications</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
+                                                <div class="mail-contnet">
+                                                    <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Comment -->
+                        
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                <ul class="dropdown-user">
+                                    <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                    <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
+                                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                                    <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        {% block sidebar %}
+                        <ul id="sidebarnav">
+                            <li class="nav-devider"></li>
+                            <li class="x"><a href="{% url 'index' %}" >
+                                    <i class="fas fa-home"></i> 
+                                    <span class="hide-menu">Home </span></a></li>
+                            <li class="x"><a href="{% url 'books' %}" >
+                                    <i class="fas fa-book-open"></i> 
+                                    <span class="hide-menu">All Books </span></a>
+                            </li>
+                            
+                            <li class="x"> 
+                                    <a  href="{% url 'author' %}" >
+                                        <i class="fas fa-pencil-alt"></i> 
+                                        <span class="hide-menu">All Authors </span>
+                                    </a>
+                                </li>
+                             
 
-    <div class="row">
-      <div class="col-sm-2">
-      {% block sidebar %}
-      <ul class="sidebar-nav shadow-sm p-3 mb-5 bg-white rounded">
-          <li><a href="{% url 'index' %}" >Home</a></li>
-          <li><a href="{% url 'books' %}" >All books</a></li>
-          <li><a href="{% url 'author' %}">All authors</a></li>
-      </ul>
-     {% endblock %}
-      </div>
-      <div class="col-sm-10 ">
+                        {% endblock %}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+                <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+     
+        <div class="row">
+           
+            <div class="col-sm-10 ">
       {% block content %}{% endblock %}
       {% block pagination %}
         {% if is_paginated %}
@@ -60,6 +188,6 @@
       </div>
     </div>
 
-  </div>
+    </div>
 </body>
 </html>

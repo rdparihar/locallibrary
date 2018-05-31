@@ -1,6 +1,110 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+
+
+
+<div class="page-wrapper">
+    <!-- Bread crumb -->
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-primary">All Books</h3> 
+        </div>
+    </div>
+    <!-- End Bread crumb -->
+    <!-- Container fluid  -->
+    <div class="container-fluid">
+        <!-- Start Page Content -->
+        <div class="row bg-white m-l-0 m-r-0 box-shadow ">
+
+            <!-- column -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"><h1>Catalog</h1></h4>
+                        <div id="extra-area-chart">
+                            
+
+
+    
+
+
+
+
+    
+    
+
+    <div class="col-lg-12">
+        <div class="card">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    {% if author_list %}
+                    <table class="table table-hover ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Date of Birth</th>
+                                <th>Date of Death</th>
+                                <th>Profile</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for author in author_list %}
+                            
+                           
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><span >{{ author }} </span></td>
+                               
+                                <td class="color-primary">{{author.date_of_birth}} - </td>
+                                <td class="">{% if author.date_of_death %}{{author.date_of_death}}{% else %}<span class="badge badge-success">Alive</span>{% endif %}</td>
+                                <td><a href="{{ author.get_absolute_url }}">
+                                    
+                                    
+                                    <button type="button" class="btn btn-info btn-rounded m-b-10 m-l-5">View Profile </button></a>
+                                </li></td>
+                            </tr>
+                            {% endfor %}
+
+                            
+                        </tbody>
+                    </table>
+                    {% else %}
+      <p>There are no author in the library.</p>
+    {% endif %}  
+                </div>
+            </div>
+        </div>
+        <!-- /# card -->
+    </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- column -->
+
+            
+            <!-- column -->
+        </div>
+        
+       
+
+        
+
+
+        <!-- End PAge Content -->
+    </div>
+    <!-- End Container fluid  -->
+</div>
+
+
+
+
+
     <h1>Author List</h1>
 
     {% if author_list %}

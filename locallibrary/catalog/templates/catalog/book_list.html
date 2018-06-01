@@ -1,111 +1,40 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
-<div class="page-wrapper">
-    <!-- Bread crumb -->
-    <div class="row page-titles">
-        <div class="col-md-5 align-self-center">
-            <h3 class="text-primary">All Books</h3> 
-        </div>
-    </div>
-    <!-- End Bread crumb -->
-    <!-- Container fluid  -->
-    <div class="container-fluid">
-        <!-- Start Page Content -->
-        <div class="row bg-white m-l-0 m-r-0 box-shadow ">
-
-            <!-- column -->
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title"><h1>Catalog</h1></h4>
-                        <div id="extra-area-chart">
-                            
-
-
-    
-
-
-
-
-    
-    
-
-    <div class="col-lg-12">
-        <div class="card">
-            
-            <div class="card-body">
-                <div class="table-responsive">
-                    {% if book_list %}
-                    <table class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Status</th>
-                                <th>Detais</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {% for book in book_list %}
-                            
-                           
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ book.title }}</td>
-                                <td class="color-primary">{{book.author}}</td>
-                                <td>
-                                  <!--<span class="badge badge-success">Available</span>-->
-                                
-                                  {% for copy in book.bookinstance_set.all %}
-                                  <span class="badge {% if copy.status == 'a' %}badge-success{% elif copy.status == 'm' %}badge-danger{% else %}badge-warning{% endif %}">{{ copy.get_status_display }}</span>
-                                  {% endfor %}
-                                </td>
-                                <td><a href="{{ book.get_absolute_url }}">
-                                  <button type="button" class="btn btn-info btn-rounded m-b-10 m-l-5">View Details </button></a>
-                                
-                                
-
-
-                                 
-                            </td>
-                            </tr>
-                            {% endfor %}
-
-                            
-                        </tbody>
-                    </table>
-                    {% else %}
-                  <p>There are no books in the library.</p>
-                    {% endif %} 
-                </div>
-            </div>
-        </div>
-        <!-- /# card -->
-    </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- column -->
-
-            
-            <!-- column -->
-        </div>
-        
-       
-
-        
-
-
-        <!-- End PAge Content -->
-    </div>
-    <!-- End Container fluid  -->
+<h4 class="card-title"><h1>Catalog</h1></h4>
+<div class="table-responsive">
+    {% if book_list %}
+    <table class="table table-hover ">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Detais</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in book_list %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ book.title }}</td>
+                <td class="color-primary">{{book.author}}</td>
+                <td>
+                    <!--<span class="badge badge-success">Available</span>-->
+                    {% for copy in book.bookinstance_set.all %}
+                    <span class="badge {% if copy.status == 'a' %}badge-success{% elif copy.status == 'm' %}badge-danger{% else %}badge-warning{% endif %}">{{ copy.get_status_display }}</span>
+                    {% endfor %}
+                </td>
+                <td><a href="{{ book.get_absolute_url }}">
+                    <button type="button" class="btn btn-info btn-rounded m-b-10 m-l-5">View Details </button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>There are no books in the library.</p>
+    {% endif %}
 </div>
-
-        
 {% endblock %}

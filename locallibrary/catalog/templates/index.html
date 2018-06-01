@@ -1,115 +1,72 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<h4 class="card-title">Catalog</h4>
+<div id="extra-area-chart">
+    <h1>Local Library Home</h1>
+    <p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
+    
+    <h2>Dynamic content</h2>
+    <h1>{{ static }}</h1>
+    <p>The library has the following record counts:</p>
+    <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
 
-<!-- Page wrapper  -->
-<div class="page-wrapper">
-    <!-- Bread crumb -->
-    <div class="row page-titles">
-        <div class="col-md-5 align-self-center">
-            <h3 class="text-primary">Catalog</h3> 
-        </div>
-    </div>
-    <!-- End Bread crumb -->
-    <!-- Container fluid  -->
-    <div class="container-fluid">
-        <!-- Start Page Content -->
-        <div class="row bg-white m-l-0 m-r-0 box-shadow ">
-
-            <!-- column -->
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Catalog</h4>
-                        <div id="extra-area-chart">
-                            <h1>Local Library Home</h1>
-
-                            <p>Welcome to <em>LocalLibrary</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
-                          
-                          <h2>Dynamic content</h2>
-                          
-                          <h1>{{ static }}</h1>
-                          
-                            <p>The library has the following record counts:</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- column -->
-
-            
-            <!-- column -->
-        </div>
-        
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card bg-primary p-20">
-                    <div class="media widget-ten">
-                        <div class="media-left meida media-middle">
-                            <span><i class="ti-bag f-s-40"></i></span>
-                        </div>
-                        <div class="media-body media-text-right">
-                            <h2 class="color-white">{{ num_authors }}</h2>
-                            <p class="m-b-0">Authors</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card bg-pink p-20">
-                    <div class="media widget-ten">
-                        <div class="media-left meida media-middle">
-                            <span><i class="ti-comment f-s-40"></i></span>
-                        </div>
-                        <div class="media-body media-text-right">
-                            <h2 class="color-white">{{ num_books }}</h2>
-                            <p class="m-b-0">Books</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-success p-20">
-                    <div class="media widget-ten">
-                        <div class="media-left meida media-middle">
-                            <span><i class="ti-vector f-s-40"></i></span>
-                        </div>
-                        <div class="media-body media-text-right">
-                            <h2 class="color-white">{{ num_instances }}</h2>
-                            <p class="m-b-0">Copies</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card bg-danger p-20">
-                    <div class="media widget-ten">
-                        <div class="media-left meida media-middle">
-                            <span><i class="ti-location-pin f-s-40"></i></span>
-                        </div>
-                        <div class="media-body media-text-right">
-                            <h2 class="color-white">{{ num_instances_available }}</h2>
-                            <p class="m-b-0">Copies Availabe</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-       
-          
-        
-
-
-        <!-- End PAge Content -->
-    </div>
-    <!-- End Container fluid  -->
 </div>
+<div class="row">
+        <div class="col-md-3">
+            <div class="card bg-primary p-20">
+                <div class="media widget-ten">
+                    <div class="media-left meida media-middle">
+                        <span><i class="ti-bag f-s-40"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2 class="color-white">{{ num_authors }}</h2>
+                        <p class="m-b-0">Authors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-
+        <div class="col-md-3">
+            <div class="card bg-pink p-20">
+                <div class="media widget-ten">
+                    <div class="media-left meida media-middle">
+                        <span><i class="ti-comment f-s-40"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2 class="color-white">{{ num_books }}</h2>
+                        <p class="m-b-0">Books</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success p-20">
+                <div class="media widget-ten">
+                    <div class="media-left meida media-middle">
+                        <span><i class="ti-vector f-s-40"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2 class="color-white">{{ num_instances }}</h2>
+                        <p class="m-b-0">Copies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-danger p-20">
+                <div class="media widget-ten">
+                    <div class="media-left meida media-middle">
+                        <span><i class="ti-location-pin f-s-40"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2 class="color-white">{{ num_instances_available }}</h2>
+                        <p class="m-b-0">Copies Availabe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
   

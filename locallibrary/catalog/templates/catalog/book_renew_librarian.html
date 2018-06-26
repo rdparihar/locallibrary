@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+{% block formrd %}
+
+<div class="container">
+    <div class="card">
+           <h1>Book : {{bookinst.book.title}}</h1>
+
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            <div class="card border-primary">
+                 <div class="card-header  bg-primary">
+                     <h4 class="m-b-0 text-white">Borrower Details</h4>
+                </div>
+                    <div class="card-body">
+                            <p><span class="badge badge-primary">Borrower</span>: {{bookinst.borrower}}</p>
+
+                            <p{% if bookinst.is_overdue %} class="text-danger"{% endif %}> <span class="badge badge-primary">Due Date</span>: {{bookinst.due_back}}</p>
+
+                    </div>
+                    <div class="card-body ">
+                            <div class="card card-outline-primary">
+                                <form action="" method="post">
+                                            {% csrf_token %}
+                                            <div class="table-responsive">
+                                            <table>
+                                            {{ form }}
+                                            </table>
+                                            </div>
+                                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                        </form>
+        
+                                    </div>
+                                </div>
+            </div>
+
+           
+        </div>
+
+       
+    </div>
+</div>
+
+
+{% endblock %}

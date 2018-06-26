@@ -17,7 +17,7 @@
         <tbody>
             {% for book in book_list %}
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ book.title }}</td>
                 <td class="color-primary">{{book.author}}</td>
                 <td>
